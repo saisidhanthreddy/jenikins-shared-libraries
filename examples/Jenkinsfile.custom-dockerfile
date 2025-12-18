@@ -1,14 +1,20 @@
 @Library('jenkins-shared-library') _
 
-// Example: Using a custom Dockerfile from your app repository
-buildAndDeploy([
+// Example: Using a custom Dockerfile for local deployment
+buildAndDeployLocal([
     language: 'python',
     appName: 'my-app',
-    environment: 'prod',
-    ecrRegistry: '123456789012.dkr.ecr.us-east-1.amazonaws.com',
-    clusterName: 'prod-eks-cluster',
-    awsRegion: 'us-east-1',
-    dockerfile: 'docker/Dockerfile.prod'  // Custom Dockerfile path in your repo
+    environment: 'dev',
+    localRegistry: 'localhost:5000',  // Optional: defaults to 'localhost:5000'
+    dockerfile: 'docker/Dockerfile.prod',  // Custom Dockerfile path in your repo
+    hostPort: 8080,  // Optional: port to expose on host
+    containerPort: 8080,  // Optional: port inside container
+    // registryUsername: 'username',  // Optional: for authenticated local registry
+    // registryPassword: 'password',  // Optional: for authenticated local registry
+    // environmentVars: [KEY1: 'value1', KEY2: 'value2'],  // Optional: environment variables
+    // volumes: ['/host/path:/container/path'],  // Optional: volume mounts
+    // network: 'my-network',  // Optional: Docker network
+    // restartPolicy: 'unless-stopped'  // Optional: container restart policy
 ])
 
 // Other examples of custom Dockerfile paths:
@@ -16,4 +22,3 @@ buildAndDeploy([
 // dockerfile: 'build/Dockerfile'
 // dockerfile: 'docker/python.Dockerfile'
 // dockerfile: 'deploy/Dockerfile'
-
