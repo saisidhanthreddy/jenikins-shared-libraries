@@ -1,0 +1,12 @@
+@Library('jenkins-shared-library') _
+
+buildAndDeploy([
+    language: 'node',
+    appName: 'node-api',
+    environment: 'prod',
+    ecrRegistry: '123456789012.dkr.ecr.us-east-1.amazonaws.com',
+    clusterName: 'prod-eks-cluster',
+    awsRegion: 'us-east-1',
+    dockerfile: 'Dockerfile'  // Optional: defaults to 'Dockerfile', can specify custom path
+])
+
