@@ -8,7 +8,7 @@ def call(Map config) {
 
     // For AWS deployment (buildAndDeploy), require ECR and cluster
     // For local deployment (buildAndDeployLocal), these are optional
-    if (!config.containsKey('localRegistry') && !config.localRegistry) {
+    if (!config.containsKey('localRegistry')) {
         required.addAll(['ecrRegistry', 'clusterName'])
     }
 
