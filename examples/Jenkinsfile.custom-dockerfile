@@ -21,4 +21,4 @@ buildAndDeployLocal([
 // dockerfile: 'Dockerfile.production'
 // dockerfile: 'build/Dockerfile'
 // dockerfile: 'docker/python.Dockerfile'
-// dockerfile: 'deploy/Dockerfile'
+// dockerfile: 'deploy/Dockerfile'~
