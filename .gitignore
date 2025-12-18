@@ -1,0 +1,20 @@
+# Jenkins
+.jenkins/
+workspace/
+*.log
+
+# Temporary files
+*.bak
+*.tmp
+k8s-deployment-temp.yaml
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
